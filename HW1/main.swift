@@ -8,5 +8,14 @@
 
 import Foundation
 
-print("Hello, World!")
+
+var dictItems = [String: Int]()
+print("Enter Shopping List Item: (Item, Item + Quantity, or blank if finished)")
+if let response = readLine(){
+    print("added \(response)!")
+} else{
+    print("Generating Shopping List")
+}
+
+
 
