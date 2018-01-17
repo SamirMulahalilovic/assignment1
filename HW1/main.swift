@@ -29,7 +29,6 @@ while(!flag){
                 quantity = Int(twoParts[1])!
             }
             // lowercase the words to match Apple with apple
-            twoParts[0] = twoParts[0].lowercased()
             if let item = dictItems[twoParts[0]] {
                 dictItems[twoParts[0]] = item + quantity
             }
@@ -42,7 +41,7 @@ while(!flag){
             flag = true
             print("finalizing list")
             // print out the keys with their quantities in sorted order
-            for (k,v) in Array(dictItems).sorted(by: <){
+            for (k,v) in Array(dictItems).sorted(by: {$0.key.lowercased() < $1.key.lowercased()}){
                 print("\(k): \(v)")
             }
         }
